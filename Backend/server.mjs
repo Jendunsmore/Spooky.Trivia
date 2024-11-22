@@ -15,8 +15,7 @@ const app = express();
 
 
 // DB Connection
-mongoose.connect(process.env.MONGO_URL); // MONGO URL goes here!!!!
-
+mongoose.connect(`mongodb+srv://JenDunsmore:Johnson1928@atlascluster.dtjav9k.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster`);
 
 // Middleware
 app.use(cors());
@@ -24,8 +23,8 @@ app.use(express.json());
 
 
 // Routes
-app.use('api/users', userRoutes);
-app.use('/api/auth', authRoutes);
+//app.use('api/users', userRoutes);
+//app.use('/api/auth', authRoutes);
 
 // API Route
 
