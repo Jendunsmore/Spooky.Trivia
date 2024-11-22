@@ -7,6 +7,9 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+// import the added route(s)
+import questionRoutes from './routes/questionRoutes.mjs';
+
 
 // Setup | Load environment variables
 dotenv.config();
@@ -23,8 +26,11 @@ app.use(express.json());
 
 
 // Routes
-//app.use('api/users', userRoutes);
-//app.use('/api/auth', authRoutes);
+app.use('/api/questions', questionRoutes);
+// app.use('/api/scores', scoreRoutes);
+// app.use('/api/facts', factRoutes);
+
+
 
 // API Route
 
