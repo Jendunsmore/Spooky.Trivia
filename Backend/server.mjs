@@ -9,7 +9,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 // import the added route(s)
 import questionRoutes from './routes/questionRoutes.mjs';
-
+import factRoutes from './routes/factRoutes.mjs';
 
 // Setup | Load environment variables
 dotenv.config();
@@ -20,6 +20,7 @@ const app = express();
 // DB Connection
 mongoose.connect(`mongodb+srv://JenDunsmore:Johnson1928@atlascluster.dtjav9k.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster`);
 
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -28,7 +29,7 @@ app.use(express.json());
 // Routes
 app.use('/api/questions', questionRoutes);
 // app.use('/api/scores', scoreRoutes);
-// app.use('/api/facts', factRoutes);
+app.use('/api/facts', factRoutes);
 
 
 
