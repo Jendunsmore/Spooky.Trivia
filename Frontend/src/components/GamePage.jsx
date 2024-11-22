@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchRandomGif } from '../utils/api';
+import { fetchRandomGif } from '../utilities/api';
 
 function GamePage() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
