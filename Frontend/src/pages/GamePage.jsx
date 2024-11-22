@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchRandomGif } from '../utilities/api';
+import { fetchRandomFact } from '../utilities/facts';
+import Fact from '../models/Fact.mjs';
+import Question from '../models/Question.mjs';
+import Score from '../models/Score.mjs';
 
 function GamePage() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -12,8 +16,10 @@ function GamePage() {
         if (isCorrect) setScore(score + 1);
         setShowFact(true);
 
-        // Fetch GIF
+        // Fetch a random GIF and random Fact
         fetchRandomGif().then((url) => setGifUrl(url));
+        fetchRandomFact().then((fact) => setShowFact(fact));
+
 
         setTimeout(() => {
             if (currentQuestionIndex + 1 < questions.length) {
@@ -35,12 +41,16 @@ function GamePage() {
                     {showFact ? (
                         <>
                             <Fact fact={funFacts[Math.floor(Math.random() * funFacts.length)]} />
-                            {gifUrl && <img src={gifUrl} alt='Spooky GIF' />}
+                            {gifUrl ? (
+                                <img src={gifUrl} alt='Spooky GIF' />
+                            ) : (
+                                <p>Loading spooky GIF...</p>
+                            )}
                         </>
                     ) : (
                         <Question
                             question={questions[currentQuestionIndex]}
-                            onAnswer={onAnswer}
+                            onAnswer={handleAnswer}
                         />
                     )}
                 </>

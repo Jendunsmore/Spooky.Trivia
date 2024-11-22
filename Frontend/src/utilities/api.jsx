@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY; // API key gets stored in .env
-const GIPHY_ENDPOINT = 'https://api.giphy.com/v1/gifs/halloween&limit=25';
+const GIPHY_ENDPOINT = 'https://api.giphy.com/v1/gifs/halloween';
 
 const fetchRandomGif = async (tag = 'Halloween') => {
     try {
