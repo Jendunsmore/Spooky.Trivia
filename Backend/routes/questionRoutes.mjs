@@ -13,7 +13,17 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Will need to add a **** POST **** Route
+router.post('/', async (req, res) => {
+    const { questionText, options, correctAnswer } = req.body;
+
+    try {
+        const newQuestion = new Question({ questionText, options, correctAnswer });
+        await newQuestion.save();
+        res.status(201).json(newQuestion);
+    } catch (error) {
+        res.status(400).json({ error: 'Failed to add question' });
+    }
+});
 
 
 export default router;

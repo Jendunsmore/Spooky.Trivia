@@ -18,7 +18,9 @@ const app = express();
 
 
 // DB Connection
-mongoose.connect(`mongodb+srv://JenDunsmore:Johnson1928@atlascluster.dtjav9k.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster`);
+mongoose.connect(process.env.MONGO_URI, {
+
+});
 
 
 // Middleware
