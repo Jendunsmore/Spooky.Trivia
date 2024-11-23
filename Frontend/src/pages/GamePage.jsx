@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { fetchRandomGif } from '../utilities/api';
 import { fetchRandomFact } from '../utilities/facts';
-import Fact from '../models/Fact.mjs';
-import Question from '../models/Question.mjs';
-import Score from '../models/Score.mjs';
+
 
 function GamePage() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [showFact, setShowFact] = useState(false);
-    const [isGameOver, setGameOver] = useState(false);
+    const [isGameOver, setIsGameOver] = useState(false);
     const [gifUrl, setGifUrl] = useState(null);
+    const [fact, setFact] = useState("");
 
     const handleAnswer = (isCorrect) => {
         if (isCorrect) setScore(score + 1);
@@ -40,7 +39,7 @@ function GamePage() {
                 <>
                     {showFact ? (
                         <>
-                            <Fact fact={funFacts[Math.floor(Math.random() * funFacts.length)]} />
+                            <Fact fact={fact || Fact[Math.floor(Math.random() * Fact.length)]} />
                             {gifUrl ? (
                                 <img src={gifUrl} alt='Spooky GIF' />
                             ) : (
@@ -49,7 +48,7 @@ function GamePage() {
                         </>
                     ) : (
                         <Question
-                            question={questions[currentQuestionIndex]}
+                            question={Question[currentQuestionIndex]}
                             onAnswer={handleAnswer}
                         />
                     )}
