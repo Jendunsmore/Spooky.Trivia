@@ -1,23 +1,13 @@
-// models/questionSchema.mjs
-// schema for trivia questions (options of answers, & correct answer)
+// Question Schema
+
 import mongoose from 'mongoose';
 
-// Schema for questions
 const questionSchema = new mongoose.Schema({
-    questionText: {
-        type: String,
-        required: true,
-    },
-    options: {
-        type: [String], // Array of strings for the multiple-choice options
-        required: true,
-    },
-    correctAnswer: {
-        type: String, // Stores the correct answer
-        required: true,
-    },
+    question: {type: String, required: true},
+    options: {type: [{type: String, required: true}]},
+    answer: {type: String, required: true},
 });
 
-// create & export Question model
-const Question = mongoose.model('Question', questionSchema);
-export default Question;
+questionSchema.index({question: 1});
+
+export default mongoose.model('Question', questionSchema);
