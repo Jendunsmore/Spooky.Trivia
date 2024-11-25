@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Routes to 'POST' or Create questions
 router.post('/', async (req, res) => {
     try {
         const newQuestion = new Question(req.body);
@@ -24,6 +25,21 @@ router.post('/', async (req, res) => {
         res.status(400).json({ error: 'Failed to add question' });
     }
 });
+
+// Routes to 'PUT" or Update a question
+router.put('/:id', async (req, res) => {
+    try {
+        let updatedQuestion = await Question.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+        });
+        res.json(updatedQuestion);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ msg: 'Server Error' });
+    }
+});
+
+
 
 
 export default router;
