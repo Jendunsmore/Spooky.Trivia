@@ -1,4 +1,4 @@
-// data / funFacts.js
+// data / facts.js
 // where fun facts are stored
 
 const funFacts = [
@@ -15,6 +15,13 @@ const funFacts = [
     "On Samhain night, all fires were extinguished and the Druids (the Celts' Priests) kindled a new fire, which was distributed the next morning to each household",
     "Popular belief once held that on Halloween, which was the last night of the Celtic year, the Celtic 'Lord of Death' (named 'Samhain') gathered together and judged the souls of all those who had died in the passing year. However, it's now recognized that the Celts had NO 'Lord of Death' and Samhain means 'Summer's End', the name of the festival at the end of October",
     "'Hallow' comes from an Old English adjective that means 'holy' and 'eve' refers to the nighttime setting. All Hallows' Eve was also referred to as All Hallows' Even - which was shortened to 'Hallow-e'en' by the 16th century. Eventually in the 18th century the apostrophe and dash were dropped.",
+    "Halloween is the second most commercially successful holiday after Christmas.",
+    "Jack-o'-lanterns were originally carved from turnips.",
+    "The first known mention of trick-or-treating was in Canada in 1927.",
+    "The world's largest pumpkin weighed over 2,600 pounds.",
+    "The tradition of wearing costumes comes from the Celtic festival Samhain.",
+    "Black cats are often associated with witches and bad luck, but they were once considered good luck in ancient Egypt.",
+    "The fear of Halloween is called Samhainophobia.",
 ];
 
 export default funFacts;
