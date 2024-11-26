@@ -43,9 +43,6 @@ A spooky-themed trivia game where users can answer trivia questions with multipl
 
 ### Backend
 
-bash
-
-Copy code
 
 `spooky-trivia-backend/
 ├── models/
@@ -59,9 +56,6 @@ Copy code
 
 ### Frontend
 
-bash
-
-Copy code
 
 `spooky-trivia-frontend/
 ├── src/
@@ -92,34 +86,24 @@ Copy code
 
 1.  Clone the repository and navigate to the backend directory:
 
-    bash
-
-    Copy code
 
     `git clone <repository-url>
     cd spooky-trivia-backend`
 
 2.  Install dependencies:
 
-    bash
 
-    Copy code
 
     `npm install`
 
 3.  Create a `.env` file and add your MongoDB URI:
 
-    env
 
-    Copy code
 
     `MONGO_URI=mongodb://localhost:27017/spooky-trivia`
 
 4.  Start the server:
 
-    bash
-
-    Copy code
 
     `npm run dev`
 
@@ -132,33 +116,23 @@ Copy code
 
 1.  Navigate to the frontend directory:
 
-    bash
 
-    Copy code
 
     `cd spooky-trivia-frontend`
 
 2.  Install dependencies:
 
-    bash
-
-    Copy code
 
     `npm install`
 
 3.  Create a `.env` file and add your API base URL:
 
-    env
 
-    Copy code
 
     `VITE_API_BASE_URL=http://localhost:5000/api/questions`
 
 4.  Start the development server:
 
-    bash
-
-    Copy code
 
     `npm run dev`
 
@@ -289,9 +263,6 @@ None
 
 ## Acknowledgments
 
--   Special thanks to **[Your Team or Mentors]** for guidance and support.
 -   Built using [React](https://reactjs.org/), [Express](https://expressjs.com/), and [MongoDB](https://www.mongodb.com/).
 
 ----------
-
-Feel free to modify this README to match the specifics of your project, such as deployment instructions or team acknowledgments. Let me know if you’d like help tweaking this further! 😊

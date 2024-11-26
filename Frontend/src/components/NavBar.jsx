@@ -44,16 +44,6 @@ function NavBar() {
                         <li className="nav-item">
                             <Link
                                 className="nav-link text-warning"
-                                to="/leaderboard"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#navbarNav"
-                            >
-                                Leaderboard
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link
-                                className="nav-link text-warning"
                                 to="/user-management"
                                 data-bs-toggle="collapse"
                                 data-bs-target="#navbarNav"

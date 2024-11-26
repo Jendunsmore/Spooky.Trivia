@@ -8,7 +8,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./index.css";
 import "./app.css";
 import NavBar from "./components/NavBar";
-import LeaderboardPage from "./pages/LeaderboardPage";
 
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/game" element={<GamePage />} />
-                    <Route path="/leaderboard" element={<LeaderboardPage />} />
                 </Routes>
             </div>
         </>
