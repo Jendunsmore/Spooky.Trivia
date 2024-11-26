@@ -1,51 +1,34 @@
+// src/api.js
 import axios from 'axios';
 
-const api = axios.create({
-    baseURL: 'http://localhost:3001/api/questions',
-});
 
-export const getQuestion = async () => {
-    try {
-        const response = await api.get('/');
-        return response.data;
-    } catch (error) {
-        console.error(error);
-        console.error('Error fetching questions:', error);
-        throw error;
-    }
+const API_BASE_URL = 'http://localhost:3001'; // Backend URL
+const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
+
+
+export const fetchQuestions = async () => {
+    const { data } = await axios.get(`${API_BASE_URL}/questions`);
+    return data;
 };
 
-export const createQuestion = async (questionData) => {
-    try {
-        const response = await api.post('/', questionData);
-        return response.data;
-    } catch (error) {
-        console.error(error);
-        console.error('Error creating questions:', error);
-        throw error;
-    }
+export const fetchUsers = async () => {
+    const { data } = await axios.get(`${API_BASE_URL}/users`);
+    return data;
 };
 
-export const updateQuestion = async (questionId, questionData) => {
-    try {
-        const response = await api.put(`/${questionId}`, questionData);
-        return response.data;
-    } catch (error) {
-        console.error(error);
-        console.error('Error updating questions:', error);
-        throw error;
-    }
+export const fetchScores = async () => {
+    const { data } = await axios.get(`${API_BASE_URL}/scores`);
+    return data;
 };
 
-export const deleteQuestion = async (questionId) => {
-    try {
-        const response = await api.delete(`/${questionId}`);
-        return response.data;
-    } catch (error) {
-        console.error(error);
-        console.error('Error deleting questions:', error);
-        throw error;
-    }
+export const submitScore = async (scoreData) => {
+    const { data } = await axios.post(`${API_BASE_URL}/scores`, scoreData);
+    return data;
 };
 
-export default api;
+export const fetchGif = async () => {
+    const { data } = await axios.get(
+        `https://api.giphy.com/v1/gifs/random?api_key=${import.meta.env.VITE_GIPHY_API_KEY}&tag=halloween`
+    );
+    return data.data.images.fixed_height.url;
+};

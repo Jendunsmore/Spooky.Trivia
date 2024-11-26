@@ -1,157 +1,46 @@
-
-
-
-body {
-  background-color: #2f2f2f;
-  font-family: 'Arial', sans-serif;
-}
-
-.TriviaGame {
-  width: 80%;
-  margin: 40px auto;
-  background-color: #4c4c4c;
-  padding: 20px;
-  border: 1px solid #666;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.TriviaGame h1 {
-  color: #ff9900;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
 }
 
-.fun-fact {
-  background-color: #333;
-  padding: 10px;
-  border: 1px solid #555;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
 
-.fun-fact h2 {
-  color: #ff9900;
-  font-size: 32px;
-  margin-bottom: 10px;
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 
-.fun-fact p {
-  color: #ccc;
-  font-size: 18px;
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.options {
-  margin-bottom: 20px;
-}
-
-.options button {
-  background-color: #4c4c4c;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.options button:hover {
-  background-color: #666;
-}
-
-.score {
-  color: #ff9900;
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.game-over {
-  background-color: #333;
-  padding: 10px;
-  border: 1px solid #555;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
-}
-
-.game-over h2 {
-  color: #ff9900;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.game-over p {
-  color: #ccc;
-  font-size: 18px;
-}
-
-/* Spooky effects */
-
-.TriviaGame {
-  animation: fade-in 2s;
-}
-
-.fun-fact {
-  animation: slide-in 2s;
-}
-
-.options button {
-  animation: pulse 1s infinite;
-}
-
-.score {
-  animation: blink 1s infinite;
-}
-
-.game-over {
-  animation: fade-in 2s;
-}
-
-/* Keyframe animations */
-
-@keyframes fade-in {
+@keyframes logo-spin {
   from {
-    opacity: 0;
+      transform: rotate(0deg);
   }
+
   to {
-    opacity: 1;
+      transform: rotate(360deg);
   }
 }
 
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
   }
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.card {
+  padding: 2em;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+.read-the-docs {
+  color: #888;
 }
+
