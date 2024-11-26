@@ -1,21 +1,17 @@
-// src/components/ScoreSummary.jsx
-// Calculates and displays the user's score and "spookiness level"
-// at the end of the game.
-
 import React from "react";
 
-function ScoreSummary({ score }) {
-    let level;
-    if (score < 5) level = "Spooky Amateur";
-    else if (score < 9) level = "Creepy Connoisseur";
-    else level = "Halloween Master";
+function Score({ score, totalQuestions }) {
+    let spookinessLevel = "";
+    if (score < 5) spookinessLevel = "Spooky Amateur";
+    else if (score < 9) spookinessLevel = "Creepy Connoisseur";
+    else spookinessLevel = "Halloween Master";
 
     return (
-        <div className="score-summary">
-            <h2>Your Score: {score}</h2>
-            <p>Spookiness Level: {level}</p>
+        <div className="score-summary bg-dark text-warning rounded p-4 text-center">
+            <h2 className="display-6">Your Score: {score}/{totalQuestions}</h2>
+            <p className="lead">Spookiness Level: <strong>{spookinessLevel}</strong></p>
         </div>
     );
 }
 
-export default ScoreSummary;
+export default Score;
