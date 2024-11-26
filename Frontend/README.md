@@ -107,7 +107,7 @@ A spooky-themed trivia game where users can answer trivia questions with multipl
 
     `npm run dev`
 
-    The backend will be available at `http://localhost:5000`.
+    The backend will be available at `http://localhost:3001`.
 
 
 ----------
@@ -129,7 +129,7 @@ A spooky-themed trivia game where users can answer trivia questions with multipl
 
 
 
-    `VITE_API_BASE_URL=http://localhost:5000/api/questions`
+    `VITE_API_BASE_URL=http://localhost:3000/api/questions`
 
 4.  Start the development server:
 
@@ -143,7 +143,7 @@ A spooky-themed trivia game where users can answer trivia questions with multipl
 
 ## API Endpoints
 
-### **Base URL**: `http://localhost:5000/api/questions`
+### **Base URL**: `http://localhost:3001/api/questions`
 
 Method
 
@@ -193,10 +193,6 @@ None
 
 -   **Mongoose Schema**:
 
-    javascript
-
-    Copy code
-
     `const questionSchema = new mongoose.Schema({
         question: { type: String, required: true, unique: true },
         options: { type: [String], required: true },
@@ -225,21 +221,12 @@ None
 
     -   Use this MongoDB query to identify duplicates:
 
-        javascript
-
-        Copy code
-
         `db.questions.aggregate([
             { $group: { _id: "$question", count: { $sum: 1 }, ids: { $push: "$_id" } } },
             { $match: { count: { $gt: 1 } } }
         ]);`
 
     -   Delete duplicates:
-
-        javascript
-
-        Copy code
-
         `db.questions.deleteMany({ _id: { $in: duplicateIds } });`
 
 2.  **Frontend Axios Network Errors**:
