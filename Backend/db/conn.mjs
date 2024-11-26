@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config(); // Load environment variables
 
-const connectionString = process.env.mongoURI;
+const connectionString = process.env.MONGO_URI;
 
 export default async function connectDB() {
     try {

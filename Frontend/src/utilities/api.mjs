@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const API_BASE_URL = 'http://localhost:3001'; // Backend URL
-const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
+const VITE_GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 
 
 export const fetchQuestions = async () => {

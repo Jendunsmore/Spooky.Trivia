@@ -3,15 +3,28 @@ import Question from '../models/questionsSchema.mjs';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
     try {
-        const newQuestion = new Question(req.body);
+        const { question, options, correctAnswer } = req.body;
+
+        if (!question || !options || !correctAnswer) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+
+        const newQuestion = new Question({
+            question,
+            options,
+            correctAnswer,
+        });
+
         await newQuestion.save();
-        res.json(newQuestion);
+        res.status(201).json(newQuestion);
     } catch (err) {
-        res.status(500).json({ message: 'Error creating question' });
+        console.error("Error creating question:", err);
+        res.status(500).json({ message: "Server error" });
     }
 });
+
 
 router.get('/', async (req, res) => {
     try {

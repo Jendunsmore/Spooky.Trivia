@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        console.log("Incoming payload:", req.body); // Log the incoming data
         const newScore = new Score(req.body);
         await newScore.save();
         res.json(newScore);
