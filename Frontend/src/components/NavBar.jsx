@@ -1,4 +1,3 @@
-// src/components/NavBar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -23,22 +22,42 @@ function NavBar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <Link className="nav-link text-warning" to="/">
+                            <Link
+                                className="nav-link text-warning"
+                                to="/"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                            >
                                 Home
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-warning" to="/game">
+                            <Link
+                                className="nav-link text-warning"
+                                to="/game"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                            >
                                 Play Game
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-warning" to="/leaderboard">
+                            <Link
+                                className="nav-link text-warning"
+                                to="/leaderboard"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                            >
                                 Leaderboard
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-warning" to="/user-management">
+                            <Link
+                                className="nav-link text-warning"
+                                to="/user-management"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                            >
                                 Manage Users
                             </Link>
                         </li>

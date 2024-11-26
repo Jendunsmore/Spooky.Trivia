@@ -16,10 +16,17 @@ export const fetchUsers = async () => {
     return data;
 };
 
+// src/utilities/api.js
 export const fetchScores = async () => {
-    const { data } = await axios.get(`${API_BASE_URL}/scores`);
-    return data;
+    try {
+        const { data } = await axios.get(`${API_BASE_URL}/scores`);
+        return data;
+    } catch (err) {
+        console.error("Error fetching scores:", err);
+        throw err; // Ensure the error propagates for debugging
+    }
 };
+
 
 export const submitScore = async (scoreData) => {
     const { data } = await axios.post(`${API_BASE_URL}/scores`, scoreData);
@@ -41,5 +48,17 @@ export const fetchGif = async () => {
 // Add this function in src/utilities/api.jsx
 export const submitQuestion = async (questionData) => {
     const { data } = await axios.post(`${API_BASE_URL}/questions`, questionData);
+    return data;
+};
+
+// Update a score by ID
+export const updateScore = async (id, updatedScoreData) => {
+    const { data } = await axios.put(`${API_BASE_URL}/scores/${id}`, updatedScoreData);
+    return data;
+};
+
+// Delete a score by ID
+export const deleteScore = async (id) => {
+    const { data } = await axios.delete(`${API_BASE_URL}/scores/${id}`);
     return data;
 };
