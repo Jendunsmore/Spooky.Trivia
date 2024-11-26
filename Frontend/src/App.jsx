@@ -1,18 +1,13 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainPage from './pages/MainPage';
+import React, { useState } from 'react';
 import GamePage from './pages/GamePage';
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/game' element={<GamePage />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <div className='app'>
+            <h1>Halloween Trivia Game</h1>
+            <GamePage />
+        </div>
+    );
 }
 
 export default App;
