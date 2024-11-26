@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/griffy": "^5.1.0",
     "@fontsource/open-sans": "^5.1.0",
+    "@popperjs/core": "^2.11.8",
     "axios": "^1.7.8",
     "bootstrap": "^5.3.3",
     "i": "^0.3.7",

@@ -27,8 +27,19 @@ export const submitScore = async (scoreData) => {
 };
 
 export const fetchGif = async () => {
-    const { data } = await axios.get(
-        `https://api.giphy.com/v1/gifs/random?api_key=${import.meta.env.VITE_GIPHY_API_KEY}&tag=halloween`
-    );
-    return data.data.images.fixed_height.url;
+    try {
+        const { data } = await axios.get(
+            `https://api.giphy.com/v1/gifs/random?api_key=${import.meta.env.VITE_GIPHY_API_KEY}&tag=halloween`
+        );
+        return data.data.images.fixed_height.url;
+    } catch (error) {
+        console.error("Error fetching GIF:", error);
+        return null; // Return null if there's an error
+    }
+};
+
+// Add this function in src/utilities/api.jsx
+export const submitQuestion = async (questionData) => {
+    const { data } = await axios.post(`${API_BASE_URL}/questions`, questionData);
+    return data;
 };

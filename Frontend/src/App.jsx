@@ -7,7 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "./app.css";
 import NavBar from "./components/NavBar";
-import SpookyAudio from "./components/SpookyAudio";
+import LeaderboardPage from "./pages/LeaderboardPage";
+import SubmitQuestionPage from "./pages/SubmitQuestionPage";
 
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
     return (
         <>
             <div className="background-overlay"></div>
-            <SpookyAudio />
             <NavBar />
             <div className="falling-bats">
                 {bats.map((_, index) => (
@@ -31,6 +31,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/game" element={<GamePage />} />
+                    <Route path="/leaderboard" element={<LeaderboardPage />} />
+                    <Route path="/submit-question" element={<SubmitQuestionPage />} />
                 </Routes>
             </div>
         </>
